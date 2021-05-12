@@ -6,3 +6,5 @@ Megoldott feladatok:
   a, részfeladat (Java, NetBeans)
   e, részfeladat (php, XAMMP)
  
+4 UseCase
+  Thiane
