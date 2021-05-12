@@ -1,5 +1,6 @@
 package rwcthv;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,18 +43,17 @@ public class MainInterface extends javax.swing.JFrame {
         ArrayList<JTextField> textArray = new ArrayList<JTextField>();
         
         for (int i = 0; i < array.size(); i++) {
-            textArray.add(new JTextField(array.get(i).getCity()));
-        }
-        
-        for (int i = 0; i < array.size(); i++) {
             //Az elérési útvonal változhat!
             iconArray.add(new ImageIcon(ImageIO.read(new File("C:\\Users\\Felhasználó\\Desktop\\Egyetem\\Szoftfej\\zh\\arrow.png"))));
             labelArray.add(new JLabel());
             arrowArray.add(new JPanel());
+            textArray.add(new JTextField());
             
             label.setIcon(iconArray.get(i));
             arrowArray.get(i).setSize(24,43);
-            arrowArray.get(i).add(labelArray.get(i)); 
+            arrowArray.get(i).add(labelArray.get(i));
+            textArray.get(i).setText(array.get(i).getCity());
+            textArray.get(i).setEditable(false);
             
             tempY = array.get(i).getY();
             tempY = widthMax - tempY;
@@ -65,6 +65,8 @@ public class MainInterface extends javax.swing.JFrame {
             
             arrowArray.get(i).setLocation((int)tempY, (int)tempX);
             textArray.get(i).setLocation((int)tempY, (int)tempX + 40);
+            textArray.get(i).setVisible(true);
+            textArray.get(i).setBackground(Color.BLACK);
             
             getContentPane().add(arrowArray.get(i));
             getContentPane().add(textArray.get(i));  
