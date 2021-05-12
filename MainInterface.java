@@ -48,20 +48,13 @@ public class MainInterface extends javax.swing.JFrame {
         for (int i = 0; i < array.size(); i++) {
             //Az elérési útvonal változhat!
             iconArray.add(new ImageIcon(ImageIO.read(new File("C:\\Users\\Felhasználó\\Desktop\\Egyetem\\Szoftfej\\zh\\arrow.png"))));
-        }
-        
-        for (int i = 0; i < array.size(); i++) {
             labelArray.add(new JLabel());
-            label.setIcon(iconArray.get(i));
-        }
-        
-        for (int i = 0; i < array.size(); i++) {
             arrowArray.add(new JPanel());
+            
+            label.setIcon(iconArray.get(i));
             arrowArray.get(i).setSize(24,43);
             arrowArray.get(i).add(labelArray.get(i)); 
-        }
-        
-        for (int i = 0; i < array.size(); i++) {                       
+            
             tempY = array.get(i).getY();
             tempY = widthMax - tempY;
             tempY = (tempY / (widthMax - widthMin)) * 1000 -110;
@@ -74,8 +67,9 @@ public class MainInterface extends javax.swing.JFrame {
             textArray.get(i).setLocation((int)tempY, (int)tempX + 40);
             
             getContentPane().add(arrowArray.get(i));
-            getContentPane().add(textArray.get(i));            
-        }    
+            getContentPane().add(textArray.get(i));  
+        }
+ 
     }
 
     @SuppressWarnings("unchecked")
